@@ -5,6 +5,7 @@ import styles from "./navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Drawer from "../drawer/Drawer";
+import DarkMode from "../../darkMode/DarkMode";
 
 const Navbar = () => {
   return (
@@ -31,6 +32,7 @@ const Navbar = () => {
         <Link href="/" className={styles.link}>
           About
         </Link>
+        <DarkMode />
         <Drawer />
       </div>
     </div>
