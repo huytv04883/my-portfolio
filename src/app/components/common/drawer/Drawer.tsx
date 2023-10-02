@@ -3,13 +3,16 @@ import Link from "next/link";
 import styles from "./drawer.module.css";
 import { useState } from "react";
 import Image from "next/image";
+import { signOut, useSession } from "next-auth/react";
+import { STATUS } from "@/app/constants/constants";
 
 const Drawer = () => {
   const [open, setOpen] = useState(false);
-  const status = "notauthenticated";
+  const { status } = useSession();
+
   return (
     <>
-      {status ? (
+      {status === STATUS[2] ? (
         <Link href="/login" className={styles.link}>
           Login
         </Link>
@@ -18,7 +21,9 @@ const Drawer = () => {
           <Link href="/write" className={styles.link}>
             Write
           </Link>
-          <span className={styles.link}>Logout</span>
+          <span onClick={() => signOut()} className={styles.link}>
+            Logout
+          </span>
         </>
       )}
       <div className={styles.burger} onClick={() => setOpen(true)}>
@@ -34,7 +39,7 @@ const Drawer = () => {
           <Link href="/">Homepage</Link>
           <Link href="/">About</Link>
           <Link href="/">Contact</Link>
-          {status === "notauthenticated" ? (
+          {status === STATUS[2] ? (
             <Link href="/login">Login</Link>
           ) : (
             <>
