@@ -1,9 +1,11 @@
 import Featured from "./components/featured/Featured";
+import Categories from "./components/categories/Categories";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main>
       <Featured />
+      <Categories />
     </main>
   );
 }
