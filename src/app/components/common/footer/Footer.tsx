@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { LinkgGit, LinkFB, LinkedIn } from "@/app/constants/Constants";
 
 const Footer = () => {
   return (
@@ -18,13 +19,13 @@ const Footer = () => {
           79 Duong Khue, Tu Liem district, Ha Noi
         </p>
         <div className={styles.icons}>
-          <Link href="https://www.facebook.com/huytv279/">
+          <Link href={LinkFB}>
             <Image src="/facebook.svg" alt="" width={18} height={18} />
           </Link>
-          <Link href="https://www.linkedin.com/in/huy-tran-van-5a4581238/">
+          <Link href={LinkedIn}>
             <Image src="/linkedin.svg" alt="" width={18} height={18} />
           </Link>
-          <Link href="https://github.com/huytv04883?tab=repositories">
+          <Link href={LinkgGit}>
             <Image src="/github.svg" alt="" width={18} height={18} />
           </Link>
         </div>
@@ -38,13 +39,9 @@ const Footer = () => {
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Social</span>
-          <Link href="https://www.facebook.com/huytv279/">Facebook</Link>
-          <Link href="https://www.linkedin.com/in/huy-tran-van-5a4581238/">
-            Linkedin
-          </Link>
-          <Link href="https://github.com/huytv04883?tab=repositories">
-            Github
-          </Link>
+          <Link href={LinkFB}>Facebook</Link>
+          <Link href={LinkedIn}>Linkedin</Link>
+          <Link href={LinkgGit}>Github</Link>
         </div>
       </div>
     </div>

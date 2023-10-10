@@ -6,18 +6,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Drawer from "../drawer/Drawer";
 import DarkMode from "../../darkMode/DarkMode";
+import { LinkFB, LinkedIn, LinkgGit } from "@/app/constants/Constants";
 
 const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.social}>
-        <Link href="https://www.facebook.com/huytv279/">
+        <Link href={LinkFB}>
           <Image src="/facebook.svg" alt="" width={18} height={18} />
         </Link>
-        <Link href="https://www.linkedin.com/in/huy-tran-van-5a4581238/">
+        <Link href={LinkedIn}>
           <Image src="/linkedin.svg" alt="" width={18} height={18} />
         </Link>
-        <Link href="https://github.com/huytv04883?tab=repositories">
+        <Link href={LinkgGit}>
           <Image src="/github.svg" alt="" width={18} height={18} />
         </Link>
       </div>
