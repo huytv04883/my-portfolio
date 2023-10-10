@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./darkMode.module.css";
 import { ThemeContext } from "@/app/context/themeContext";
-import { MODE } from "@/app/constants/constants";
+import { MODE } from "@/app/constants/Constants";
 import { useContext } from "react";
 
 const DarkMode = () => {

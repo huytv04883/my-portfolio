@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./categories.module.css";
-
-interface itemPops {
-  id: string;
-  slug: string;
-  title: string;
-  img: string;
-}
+import { IItemPops } from "./Categories.type";
 
 const getData = async () => {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
@@ -23,13 +17,12 @@ const getData = async () => {
 
 const Categories = async () => {
   const data = await getData();
-  console.log(data);
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {data?.map((item: itemPops) => (
+        {data?.map((item: IItemPops) => (
           <Link
             href="/blog?cat=style"
             className={`${styles.category} ${styles[item.slug]}`}

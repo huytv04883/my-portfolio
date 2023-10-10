@@ -1,8 +1,8 @@
 "use client";
 
 import React, { createContext, useEffect, useState } from "react";
-import { MODE } from "../constants/constants";
-import { ChildrenProps, CurrentContextType } from "../constants/themeInterface";
+import { MODE } from "../constants/Constants";
+import { ChildrenProps, CurrentContextType } from "../constants/Theme.type";
 
 export const ThemeContext = createContext<CurrentContextType>({
   theme: MODE[0],

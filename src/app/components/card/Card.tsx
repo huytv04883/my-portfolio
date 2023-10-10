@@ -1,14 +1,9 @@
 import Image from "next/image";
 import styles from "./card.module.css";
 import Link from "next/link";
-import { PostProps } from "@/app/constants/themeInterface";
+import { ICardProps } from "./Card.type";
 
-interface CardProps {
-  key: string;
-  item: PostProps;
-}
-
-const Card: React.FC<CardProps> = ({ key, item }) => {
+const Card: React.FC<ICardProps> = ({ key, item }) => {
   return (
     <div className={styles.container} key={key}>
       {item.img && (

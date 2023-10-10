@@ -4,7 +4,7 @@ import styles from "./drawer.module.css";
 import { useState } from "react";
 import Image from "next/image";
 import { signOut, useSession } from "next-auth/react";
-import { STATUS } from "@/app/constants/constants";
+import { STATUS } from "@/app/constants/Constants";
 
 const Drawer = () => {
   const [open, setOpen] = useState(false);
