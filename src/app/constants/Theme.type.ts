@@ -19,3 +19,15 @@ export interface PostProps {
     views: number;
     catSlug: string;
 }
+
+export interface PostPageSearchParamsProps {
+    page: string;
+    cat: string;
+    sort_by?: string;
+    sort_order?: "asc" | "desc";
+}
+
+export interface PageProps {
+    params: {};
+    searchParams: PostPageSearchParamsProps;
+}

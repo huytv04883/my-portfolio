@@ -4,7 +4,7 @@ import styles from "./categories.module.css";
 import { IItemPops } from "./Categories.type";
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/categories`, {
     cache: "no-store",
   });
 
@@ -24,7 +24,7 @@ const Categories = async () => {
       <div className={styles.categories}>
         {data?.map((item: IItemPops) => (
           <Link
-            href="/blog?cat=style"
+            href={`/blog?cat=${item.slug}`}
             className={`${styles.category} ${styles[item.slug]}`}
             key={item.id}
           >

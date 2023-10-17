@@ -1,5 +1,5 @@
 export interface IPaginationProps {
     page: number;
-    hasPrev: boolean;
-    hasNext: boolean;
+    isShowNext: boolean;
+    isShowPrev: boolean;
 }
