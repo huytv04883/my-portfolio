@@ -5,11 +5,12 @@ import { PageProps } from "./constants/Theme.type";
 
 export default function Home({ searchParams }: PageProps) {
   const page = parseInt(searchParams.page) || 1;
+  const { cat } = searchParams;
 
   return (
     <main>
       <Categories />
-      <CardList page={page} />
+      <CardList page={page} cat={cat} />
     </main>
   );
 }
