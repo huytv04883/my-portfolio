@@ -2,7 +2,7 @@ import prisma from "@/app/utils/connect";
 import { NextRequest, NextResponse } from "next/server";
 
 // GET SINGLE POST
-export const GET = async (req: NextRequest | Request, { params }: { params: { slug: string } }) => {
+export const GET = async (req: NextRequest, { params }: { params: { slug: string } }) => {
     const { slug } = params;
 
     try {
