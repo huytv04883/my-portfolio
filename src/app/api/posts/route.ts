@@ -1,8 +1,7 @@
 import prisma from "@/app/utils/connect";
-import { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export const GET = async (req: NextApiRequest) => {
+export const GET = async (req: NextRequest | Request) => {
   try {
     if (req.url) {
       const { searchParams } = new URL(req.url);
