@@ -13,9 +13,9 @@ const Pagination: React.FC<IPaginationProps> = ({
   const router = useRouter();
 
   return (
-    <div className={styles.container}>
+    <div className="flex justify-between mt-5">
       <button
-        className={styles.button}
+        className="border-none p-4 bg-[crimson] text-white cursor-pointer disabled:cursor-not-allowed"
         disabled={!isShowPrev}
         onClick={() => router.push(`?page=${page - 1}`)}
       >
@@ -23,7 +23,7 @@ const Pagination: React.FC<IPaginationProps> = ({
       </button>
       <button
         disabled={!isShowNext}
-        className={styles.button}
+        className="border-none p-4 bg-[crimson] text-white cursor-pointer disabled:cursor-not-allowed"
         onClick={() => router.push(`?page=${page + 1}`)}
       >
         Next

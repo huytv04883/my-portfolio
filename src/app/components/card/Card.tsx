@@ -1,31 +1,30 @@
 import Image from "next/image";
-import styles from "./card.module.css";
 import Link from "next/link";
 import { ICardProps } from "./Card.type";
 
 const Card: React.FC<ICardProps> = ({ key, item }) => {
   return (
-    <div className={styles.container} key={key}>
+    <div className="py-2" key={key}>
       {item.img && (
-        <div className={styles.imageContainer}>
-          <Image src={item.img} alt="" fill className={styles.image} />
+        <div className="flex-1 h-80 relative">
+          <Image src={item.img} alt="" fill className="object-cover" />
         </div>
       )}
-      <div className={styles.textContainer}>
-        <div className={styles.detail}>
-          <span className={styles.date}>
-            {item.createdAt.substring(0, 10)} -{" "}
+      <div className="flex-1 flex flex-col gap-5">
+        <div className="flex items-center gap-1">
+          <span className="text-slate-500">
+            {item.createdAt.substring(0, 10)}
           </span>
-          <span className={styles.category}>{item.catSlug}</span>
+          <span className="text-red-600 uppercase">{item.catSlug}</span>
         </div>
         <Link href={`/posts/${item.slug}`}>
           <h1>{item.title}</h1>
         </Link>
         <div
-          className={styles.desc}
+          className="text-lg font-light"
           dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60) }}
         />
-        <Link href={`/posts/${item.slug}`} className={styles.link}>
+        <Link href={`/posts/${item.slug}`} className="pb-2 border-b border-solid border-[crimson]">
           Read More
         </Link>
       </div>

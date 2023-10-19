@@ -10,7 +10,7 @@ import ThemeProvider from "./providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Learn Next App",
   description: "Huytv04883@gmail.com",
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
           <ThemeContextProvider>
             <ThemeProvider>
               <div className="wrapper">
-                <div className="container">
+                <div className="container m-auto min-h-screen flex flex-col px-4">
                   <Navbar />
                   {children}
                   <Footer />

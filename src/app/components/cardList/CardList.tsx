@@ -1,8 +1,7 @@
 import { PostProps } from "@/app/constants/Theme.type";
 import Card from "../card/Card";
-import styles from "./cardList.module.css";
-import { CardListProps } from "./CardList.type";
 import Pagination from "../pagination/Pagination";
+import { CardListProps } from "./CardList.type";
 
 const getData = async (page: number, cat: string) => {
   const res = await fetch(
@@ -31,20 +30,20 @@ const CardList = async ({ page, cat }: CardListProps) => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Recent Posts</h1>
-      <div className={styles.posts}>
+    <div className="container">
+      <h1 className="py-3">Recent Posts</h1>
+      <div className="py-3 grid grid-cols-2 gap-5">
         {posts?.map((item: PostProps) => (
           <Card item={item} key={item.id} />
         ))}
-        {posts.lenght > 0 && (
-          <Pagination
-            page={page}
-            isShowPrev={isShowPrev}
-            isShowNext={isShowNext}
-          />
-        )}
       </div>
+      {posts.length > 0 && (
+        <Pagination
+          page={page}
+          isShowPrev={isShowPrev}
+          isShowNext={isShowNext}
+        />
+      )}
     </div>
   );
 };

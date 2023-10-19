@@ -8,17 +8,17 @@ import { LinkgGit, LinkFB, LinkedIn } from "@/app/constants/Constants";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.info}>
-        <div className={styles.logo}>
+    <footer className={`${styles.footer_wrapper} py-5 flex justify-between mt-auto`}>
+      <div className="flex flex-1 flex-col gap-3">
+        <div className="flex items-center gap-2">
           <Image src="/logo.png" alt="Huytv" width={50} height={50} />
-          <h1 className={styles.logoText}>2709 - Since 1998</h1>
+          <h1 className="text-2xl">Since-1998</h1>
         </div>
-        <p className={styles.desc}>
+        <p className="font-light">
           Phone: 0349548174 <br /> Email: huytv04883@gmail.com <br /> Address:
           79 Duong Khue, Tu Liem district, Ha Noi
         </p>
-        <div className={styles.icons}>
+        <div className="mt-2 flex gap-2">
           <Link href={LinkFB}>
             <Image src="/facebook.svg" alt="" width={18} height={18} />
           </Link>
@@ -30,21 +30,25 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className={styles.links}>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Links</span>
-          <Link href="/blog">Blog</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+      <div className="flex flex-1 justify-end gap-24">
+        <div className="flex flex-col gap-2 font-light">
+          <span className="font-bold">Links</span>
+          <ul className="flex flex-col gap-2">
+            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+          </ul>
         </div>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Social</span>
-          <Link href={LinkFB}>Facebook</Link>
-          <Link href={LinkedIn}>Linkedin</Link>
-          <Link href={LinkgGit}>Github</Link>
+        <div className="flex flex-col gap-2 font-light">
+          <span className="font-bold">Social</span>
+          <ul className="flex flex-col gap-2">
+            <li><Link href={LinkFB}>Facebook</Link></li>
+            <li><Link href={LinkedIn}>Linkedin</Link></li>
+            <li><Link href={LinkgGit}>Github</Link></li>
+          </ul>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

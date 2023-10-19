@@ -13,27 +13,27 @@ const Drawer = () => {
   return (
     <>
       {status === STATUS[2] ? (
-        <Link href="/login" className={styles.link}>
+        <Link href="/login" className="cursor-pointer sm:hidden">
           Login
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
+          <Link href="/write" className="cursor-pointer sm:hidden">
             Write
           </Link>
-          <span onClick={() => signOut()} className={styles.link}>
+          <span onClick={() => signOut()} className="cursor-pointer sm:hidden">
             Logout
           </span>
         </>
       )}
-      <div className={styles.burger} onClick={() => setOpen(true)}>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
+      <div className="w-5 h-4 sm:flex hidden flex-col justify-between cursor-pointer" onClick={() => setOpen(true)}>
+        <div className={`${styles.line} w-full h-0.5`}></div>
+        <div className={`${styles.line} w-full h-0.5`}></div>
+        <div className={`${styles.line} w-full h-0.5`}></div>
       </div>
       {open && (
         <div className={styles.responsiveMenu}>
-          <div className={styles.close} onClick={() => setOpen(false)}>
+          <div className="absolute top-4 right-4 left-auto" onClick={() => setOpen(false)}>
             <Image src="/close.svg" alt="" width={18} height={18} />
           </div>
           <Link href="/">Homepage</Link>
@@ -44,7 +44,7 @@ const Drawer = () => {
           ) : (
             <>
               <Link href="/write">Write</Link>
-              <span className={styles.link}>Logout</span>
+              <span className="cursor-pointer">Logout</span>
             </>
           )}
         </div>

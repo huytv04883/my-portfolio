@@ -1,17 +1,15 @@
 "use client";
 
-import React from "react";
-import styles from "./navbar.module.css";
+import { LinkFB, LinkedIn, LinkgGit } from "@/app/constants/Constants";
 import Image from "next/image";
 import Link from "next/link";
-import Drawer from "../drawer/Drawer";
 import DarkMode from "../../darkMode/DarkMode";
-import { LinkFB, LinkedIn, LinkgGit } from "@/app/constants/Constants";
+import Drawer from "../drawer/Drawer";
 
 const Navbar = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.social}>
+    <header className="flex items-center justify-between h-28">
+      <div className="flex flex-1 gap-2">
         <Link href={LinkFB}>
           <Image src="/facebook.svg" alt="" width={18} height={18} />
         </Link>
@@ -22,21 +20,15 @@ const Navbar = () => {
           <Image src="/github.svg" alt="" width={18} height={18} />
         </Link>
       </div>
-      <div className={styles.logo}>Since - 1998</div>
-      <div className={styles.links}>
-        <Link href="/" className={styles.link}>
-          Homepage
-        </Link>
-        <Link href="/" className={styles.link}>
-          Contact
-        </Link>
-        <Link href="/" className={styles.link}>
-          About
-        </Link>
+      <div className="flex text-center text-4xl font-bold">Since - 1998</div>
+      <div className="flex items-center gap-5 flex-1 text-xl">
+        <Link href="/">Homepage</Link>
+        <Link href="/">Contact</Link>
+        <Link href="/">About</Link>
         <DarkMode />
         <Drawer />
       </div>
-    </div>
+    </header>
   );
 };
 

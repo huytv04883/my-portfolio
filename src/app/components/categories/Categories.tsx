@@ -19,13 +19,13 @@ const Categories = async () => {
   const data = await getData();
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Popular Categories</h1>
-      <div className={styles.categories}>
+    <div className="container">
+      <h1 className="py-5 font-semibold">Popular Categories</h1>
+      <div className="flex flex-wrap items-center gap-5">
         {data?.map((item: IItemPops) => (
           <Link
             href={`/blog?cat=${item.slug}`}
-            className={`${styles.category} ${styles[item.slug]}`}
+            className={`${styles.category} ${styles[item.slug]} flex items-center gap-2 p-2`}
             key={item.id}
           >
             {item.img && (
@@ -34,7 +34,7 @@ const Categories = async () => {
                 alt={item.slug}
                 width={32}
                 height={32}
-                className={styles.image}
+                className="rounded-full object-cover w-8 h-8"
               />
             )}
             {item.title}
