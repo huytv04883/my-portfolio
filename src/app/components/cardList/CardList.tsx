@@ -26,16 +26,16 @@ const CardList = async ({ page, cat }: CardListProps) => {
   const isShowNext = ITEM_PER_PAGE * (page - 1) + ITEM_PER_PAGE < count;
 
   if (!posts.length) {
-    return <p className="flex items-center w-full justify-center p-4">No Item</p>;
+    return (
+      <p className="flex items-center w-full justify-center p-4">No Item</p>
+    );
   }
 
   return (
     <div className="container">
       <h1 className="py-3">Recent Posts</h1>
       <div className="py-3 grid grid-cols-2 gap-5">
-        {posts?.map((item: IPostProps) => (
-          <Card key={item.id} item={item} />
-        ))}
+        {posts?.map((item: IPostProps) => <Card key={item.id} item={item} />)}
       </div>
       {posts.length > 0 && (
         <Pagination
