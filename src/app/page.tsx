@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <div className="grid grid-cols-1fr-30 gap-8">
-        <Sidebar />
+        {/* <Sidebar /> */}
         {/* <div className="flex flex-col">
           <Categories />
           <CardList page={page} cat={cat} />
