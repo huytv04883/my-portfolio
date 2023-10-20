@@ -34,7 +34,7 @@ const CardList = async ({ page, cat }: CardListProps) => {
       <h1 className="py-3">Recent Posts</h1>
       <div className="py-3 grid grid-cols-2 gap-5">
         {posts?.map((item: IPostProps) => (
-          <Card item={item} key={item.id} />
+          <Card key={item.id} item={item} />
         ))}
       </div>
       {posts.length > 0 && (

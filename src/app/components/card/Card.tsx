@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ICardProps } from "./Card.type";
 
-const Card: React.FC<ICardProps> = ({ key, item }) => {
+const Card: React.FC<ICardProps> = ({ item }) => {
   return (
-    <div className="py-2" key={key}>
+    <div className="py-2">
       {item.img && (
         <div className="flex-1 h-80 relative">
           <Image src={item.img} alt="" fill className="object-cover" />

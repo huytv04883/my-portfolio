@@ -26,7 +26,7 @@ export default function RootLayout({
           <ThemeContextProvider>
             <ThemeProvider>
               <div className="wrapper">
-                <div className="container m-auto min-h-screen flex flex-col px-4">
+                <div className="container m-auto min-h-screen flex flex-col px-4 gap-5">
                   <Navbar />
                   {children}
                   <Footer />

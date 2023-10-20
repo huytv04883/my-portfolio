@@ -25,7 +25,7 @@ const Categories = async () => {
         {data?.map((item: IItemPops) => (
           <Link
             href={`/blog?cat=${item.slug}`}
-            className={`${styles.category} ${styles[item.slug]} flex items-center gap-2 p-2`}
+            className={`${styles.category} ${styles[item.slug]} flex items-center gap-2 p-2 rounded-md`}
             key={item.id}
           >
             {item.img && (
