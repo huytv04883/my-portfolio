@@ -1,6 +1,6 @@
-import { PostProps } from "@/app/constants/Theme.type";
+import { IPostProps } from "@/app/constants/Theme.type";
 
 export interface ICardProps {
     key: string;
-    item: PostProps;
+    item: IPostProps;
 }

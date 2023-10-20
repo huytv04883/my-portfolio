@@ -1,11 +1,11 @@
-import { PostProps } from "@/app/constants/Theme.type";
+import { IPostProps } from "@/app/constants/Theme.type";
 import Card from "../card/Card";
 import Pagination from "../pagination/Pagination";
 import { CardListProps } from "./CardList.type";
 
 const getData = async (page: number, cat: string) => {
   const res = await fetch(
-    `${process.env.NEXTAUTH_URL}/posts?page=${page}&cat=${cat || ""}`,
+    `${process.env.BASE_DOMAIN}/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
@@ -33,7 +33,7 @@ const CardList = async ({ page, cat }: CardListProps) => {
     <div className="container">
       <h1 className="py-3">Recent Posts</h1>
       <div className="py-3 grid grid-cols-2 gap-5">
-        {posts?.map((item: PostProps) => (
+        {posts?.map((item: IPostProps) => (
           <Card item={item} key={item.id} />
         ))}
       </div>

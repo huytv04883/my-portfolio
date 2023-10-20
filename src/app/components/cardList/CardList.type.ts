@@ -1,4 +1,4 @@
-import { PageProps } from "@/app/constants/Theme.type";
+import { IPageProps } from "@/app/constants/Theme.type";
 
 export interface CardListProps {
     page: number,

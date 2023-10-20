@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Comments from "@/app/components/comments/Comments";
 
 const getData = async (slug: string) => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/posts/${slug}`, {
+  const res = await fetch(`${process.env.BASE_DOMAIN}/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -18,9 +19,6 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
   const data = await getData(slug);
-
-  console.log(data);
-
 
   return (
     <div className="container">
@@ -58,6 +56,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
           />
         </div>
       </div>
+      <Comments postSlug={slug} />
     </div>
   );
 };

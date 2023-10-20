@@ -1,12 +1,12 @@
 "use client";
 
-import { ChildrenProps } from "../constants/Theme.type";
+import { IChildrenProps } from "../constants/Theme.type";
 import { ThemeContext } from "../context/themeContext";
 import React, { useContext, useEffect, useState } from "react";
 
-const ThemeProvider: React.FC<ChildrenProps> = ({
+const ThemeProvider: React.FC<IChildrenProps> = ({
   children,
-}: ChildrenProps) => {
+}: IChildrenProps) => {
   const { theme } = useContext(ThemeContext);
   const [mounted, setMounted] = useState(false);
 

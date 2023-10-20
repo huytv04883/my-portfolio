@@ -1,9 +1,9 @@
 "use client";
 
-import { ChildrenProps } from "../constants/Theme.type";
+import { IChildrenProps } from "../constants/Theme.type";
 import { SessionProvider } from "next-auth/react";
 
-const AuthProvider: React.FC<ChildrenProps> = ({ children }: ChildrenProps) => {
+const AuthProvider: React.FC<IChildrenProps> = ({ children }: IChildrenProps) => {
   return <SessionProvider>{children}</SessionProvider>;
 };
 

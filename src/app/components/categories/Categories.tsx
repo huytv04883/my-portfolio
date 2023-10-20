@@ -4,7 +4,7 @@ import styles from "./categories.module.css";
 import { IItemPops } from "./Categories.type";
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/categories`, {
+  const res = await fetch(`${process.env.BASE_DOMAIN}/categories`, {
     cache: "no-store",
   });
 

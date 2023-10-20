@@ -2,9 +2,9 @@
 
 import React, { createContext, useEffect, useState } from "react";
 import { MODE } from "../constants/Constants";
-import { ChildrenProps, CurrentContextType } from "../constants/Theme.type";
+import { IChildrenProps, ICurrentContextType } from "../constants/Theme.type";
 
-export const ThemeContext = createContext<CurrentContextType>({
+export const ThemeContext = createContext<ICurrentContextType>({
   theme: MODE[0],
   toggle: () => {},
 });
@@ -17,9 +17,9 @@ const getFromLocalStorage = (): string => {
   return MODE[0]; // Default to "light" if window is undefined
 };
 
-export const ThemeContextProvider: React.FC<ChildrenProps> = ({
+export const ThemeContextProvider: React.FC<IChildrenProps> = ({
   children,
-}: ChildrenProps) => {
+}: IChildrenProps) => {
   const [theme, setTheme] = useState<string>(() => {
     return getFromLocalStorage();
   });

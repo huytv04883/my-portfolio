@@ -1,7 +1,7 @@
 import CardList from "../components/cardList/CardList";
-import { PageProps } from "../constants/Theme.type";
+import { IPageProps } from "../constants/Theme.type";
 
-const BlogPage = ({ searchParams }: PageProps) => {
+const BlogPage = ({ searchParams }: IPageProps) => {
   const page = parseInt(searchParams.page) || 1;
   const { cat } = searchParams;
 
